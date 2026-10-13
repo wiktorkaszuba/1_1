@@ -15,16 +15,15 @@
       content.textContent = "Długość numeru musi być równa 9";
       return;
     }
-    if (/[a-zA-Z]/.test(ex2text.value)) {
+    if (ex2text.value.match(/[a-zA-Z]/)) {
       content.textContent = "Numer nie może zawierać liter";
       return;
     }
-    if (/^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/.test(ex2text.value)) {
+    if (ex2text.value.match(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/)) {
       content.textContent = "Numer nie może zawierać znaków specjalnych";
       return;
     }
     if (ex2text.value.length == 9)
       content.textContent = "Numer telefonu jest poprawny";
-    console.log("a");
   });
 })();
